@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.VehicleDetailsFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        app:layout_constraintBottom_toTopOf="@+id/submit_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout_arrwback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/img_arrowback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrowback"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                <ImageView
+                    android:id="@+id/img_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_support"
+                    android:layout_marginEnd="@dimen/_40sdp"
+                    app:layout_constraintTop_toTopOf="@id/img_arrowback"
+                    app:layout_constraintBottom_toBottomOf="@id/img_arrowback"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Help"
+                    android:textSize="12sp"
+                    android:textColor="#0F6FB5"
+                    android:textAllCaps="false"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    app:layout_constraintTop_toTopOf="@id/img_support"
+                    app:layout_constraintBottom_toBottomOf="@id/img_support"
+                    app:layout_constraintStart_toEndOf="@id/img_support"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/vehicle_detail_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/vehicle_details"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout_arrwback"/>
+            <ImageView
+                android:id="@+id/ic_scooter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/circle_background_border"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:paddingVertical="@dimen/_17sdp"
+                android:src="@drawable/ic_motorcycle_"
+                app:layout_constraintStart_toStartOf="@+id/vehicle_detail_txt"
+                app:layout_constraintTop_toBottomOf="@id/vehicle_detail_txt" />
+
+            <LinearLayout
+                android:id="@+id/detail_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_scooter"
+                app:layout_constraintStart_toEndOf="@+id/ic_scooter"
+                app:layout_constraintTop_toTopOf="@+id/ic_scooter">
+
+                <TextView
+                    android:id="@+id/vehicle_selected_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Vehicle Selected"
+                    android:textColor="@color/blue_600"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/vehicle_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Motorcycle"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/info_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/best_for_delivering_documents_daily_essentials"
+                    android:textColor="@color/white_400"
+                    android:textSize="12sp"  />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_box_packed"  />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:fontFamily="@font/inter_semibold"
+                        android:text="0.4 x 0.4 x 0.4 Meter.Up to 20 kg"
+                        android:textColor="@color/white_400"
+                        android:textSize="12sp"  />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white_300"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ic_scooter"
+                app:layout_constraintTop_toBottomOf="@id/detail_layout" />
+
+            <TextView
+                android:id="@+id/vehicle_number_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/enter_vehicle_number"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/view"
+                app:layout_constraintTop_toBottomOf="@id/view" />
+
+            <EditText
+                android:id="@+id/vehicle_number"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start|center"
+                android:hint="Ex. UP16AA 2332"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white_500"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/vehicle_number"
+                app:layout_constraintTop_toBottomOf="@+id/vehicle_number_txt" />
+
+            <TextView
+                android:id="@+id/upload_rc_image_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/upload_rc_image"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/vehicle_number_txt"
+                app:layout_constraintTop_toBottomOf="@id/vehicle_number" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/max_size_200kb"
+                android:textColor="@color/blue_600"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/upload_rc_image_txt"
+                app:layout_constraintEnd_toEndOf="@+id/vehicle_number"
+                app:layout_constraintTop_toBottomOf="@id/vehicle_number"
+                app:layout_constraintTop_toTopOf="@id/upload_rc_image_txt" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/upload_rc_layout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_95sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dotted_border_box"
+                app:layout_constraintEnd_toEndOf="@+id/vehicle_number"
+                app:layout_constraintStart_toStartOf="@+id/vehicle_number"
+                app:layout_constraintTop_toBottomOf="@id/upload_rc_image_txt">
+
+                <ImageView
+                    android:id="@+id/ic_upload_rc"
+                    android:layout_width="38dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ic_upload"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/upload_rc_image"
+                    android:textColor="@color/white_500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/ic_upload_rc"
+                    app:layout_constraintStart_toStartOf="@+id/ic_upload_rc"
+                     app:layout_constraintTop_toBottomOf="@id/ic_upload_rc" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/upload_bike_image_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/upload_bike_front"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/vehicle_number_txt"
+                app:layout_constraintTop_toBottomOf="@id/upload_rc_layout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/max_size_200kb"
+                android:textColor="@color/blue_600"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/upload_bike_image_txt"
+                app:layout_constraintEnd_toEndOf="@+id/upload_rc_layout"
+                app:layout_constraintTop_toBottomOf="@id/upload_bike_image_txt"
+                app:layout_constraintTop_toTopOf="@id/upload_bike_image_txt" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/upload_bike_layout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_95sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dotted_border_box"
+                app:layout_constraintEnd_toEndOf="@+id/upload_rc_layout"
+                app:layout_constraintStart_toStartOf="@+id/upload_rc_layout"
+                app:layout_constraintTop_toBottomOf="@id/upload_bike_image_txt">
+
+                <ImageView
+                    android:id="@+id/ic_bike_upload"
+                    android:layout_width="38dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ic_upload"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="156dp"
+                    android:layout_height="21dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/upload_bike_front_image"
+                    android:textAlignment="center"
+                    android:textColor="@color/white_500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/ic_bike_upload"
+                    app:layout_constraintHorizontal_bias="0.508"
+                    app:layout_constraintStart_toStartOf="@+id/ic_bike_upload"
+                    app:layout_constraintTop_toBottomOf="@+id/ic_bike_upload" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/upload_bike_image_back_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/upload_bike_back"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/upload_bike_image_txt"
+                app:layout_constraintTop_toBottomOf="@id/upload_bike_layout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/max_size_200kb"
+                android:textColor="@color/blue_600"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/upload_bike_image_back_txt"
+                app:layout_constraintEnd_toEndOf="@+id/upload_bike_layout"
+                app:layout_constraintTop_toBottomOf="@id/upload_bike_image_back_txt"
+                app:layout_constraintTop_toTopOf="@id/upload_bike_image_back_txt" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bike_back_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_95sdp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/dotted_border_box"
+                app:layout_constraintTop_toBottomOf="@id/upload_bike_image_back_txt">
+
+                <ImageView
+                    android:id="@+id/ic_electric"
+                    android:layout_width="38dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ic_upload"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/upload_bike_back_image"
+                    android:textColor="@color/white_500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/ic_electric"
+                    app:layout_constraintStart_toStartOf="@+id/ic_electric"
+                    app:layout_constraintTop_toBottomOf="@+id/ic_electric" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/electric_image_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/upload_electric_vehicle_doc"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/upload_bike_image_back_txt"
+                app:layout_constraintTop_toBottomOf="@id/bike_back_layout" />
+
+            <TextView
+                android:id="@+id/max_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/max_size_200kb"
+                android:textColor="@color/blue_600"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/electric_image_txt"
+                app:layout_constraintEnd_toEndOf="@+id/bike_back_layout"
+                app:layout_constraintTop_toBottomOf="@id/electric_image_txt"
+                app:layout_constraintTop_toTopOf="@id/electric_image_txt" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/electric_bike_layout"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_95sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/dotted_border_box"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/bike_back_layout"
+                app:layout_constraintStart_toStartOf="@+id/bike_back_layout"
+                app:layout_constraintTop_toBottomOf="@id/electric_image_txt">
+
+                <ImageView
+                    android:id="@+id/ic_upload_bike"
+                    android:layout_width="38dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ic_upload"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/upload_ev_document_image"
+                    android:textColor="@color/white_500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/ic_upload_bike"
+                    app:layout_constraintStart_toStartOf="@+id/ic_upload_bike"
+                    app:layout_constraintTop_toBottomOf="@+id/ic_upload_bike" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit_btn"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/button_background"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:text="@string/submit"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

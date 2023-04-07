@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.FilterFragment">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/filter_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingVertical="@dimen/_12sdp"
+        android:elevation="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+             android:background="@drawable/arrowback"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/filters"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            app:layout_constraintStart_toEndOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/filter_border"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filter_border">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/secondlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/time"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/yesterday_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="@string/yesterday"
+                    android:textColor="@color/orange_600"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/time"
+                    app:layout_constraintTop_toBottomOf="@id/time" />
+
+                <CheckBox
+                    android:id="@+id/yesterday_checkbox"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:button="@drawable/checkbox_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/yesterday_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/yesterday_txt"
+                    app:layout_constraintTop_toTopOf="@id/yesterday_txt" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="19dp"
+                    android:background="@color/white_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/yesterday_txt" />
+
+                <TextView
+                    android:id="@+id/date_wise_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Date Wise"
+                    android:textColor="@color/white_500"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/time"
+                    app:layout_constraintTop_toBottomOf="@id/view" />
+
+                <CheckBox
+                    android:id="@+id/dete_wise_checkbox"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:button="@drawable/checkbox_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/date_wise_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/date_wise_txt"
+                    app:layout_constraintTop_toTopOf="@id/date_wise_txt" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="19dp"
+                    android:background="@color/white_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/date_wise_txt" />
+
+                <TextView
+                    android:id="@+id/this_week_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="This week"
+                    android:textColor="@color/white_500"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/time"
+                    app:layout_constraintTop_toBottomOf="@id/view1" />
+
+                <CheckBox
+                    android:id="@+id/checkbox2"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:button="@drawable/checkbox_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/this_week_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/this_week_txt"
+                    app:layout_constraintTop_toTopOf="@id/this_week_txt" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="19dp"
+                    android:background="@color/white_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/this_week_txt" />
+
+                <TextView
+                    android:id="@+id/last_week_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Last Week"
+                    android:textColor="@color/white_500"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/time"
+                    app:layout_constraintTop_toBottomOf="@id/view2" />
+
+                <CheckBox
+                    android:id="@+id/last_week_checkbox"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:button="@drawable/checkbox_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/last_week_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last_week_txt"
+                    app:layout_constraintTop_toTopOf="@id/last_week_txt" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="19dp"
+                    android:background="@color/white_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last_week_txt" />
+
+
+                <TextView
+                    android:id="@+id/this_month_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="This Month"
+                    android:textColor="@color/white_500"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/time"
+                    app:layout_constraintTop_toBottomOf="@id/view3" />
+
+                <CheckBox
+                    android:id="@+id/this_week_checkbox"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:button="@drawable/checkbox_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/this_month_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/this_month_txt"
+                    app:layout_constraintTop_toTopOf="@id/this_month_txt" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="19dp"
+                    android:background="@color/white_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/this_month_txt" />
+
+                <TextView
+                    android:id="@+id/last_month_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Last Month"
+                    android:textColor="@color/white_500"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/time"
+                    app:layout_constraintTop_toBottomOf="@id/view4" />
+
+                <CheckBox
+                    android:id="@+id/last_month_checkbox"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:button="@drawable/checkbox_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/last_month_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last_month_txt"
+                    app:layout_constraintTop_toTopOf="@id/last_month_txt" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="19dp"
+                    android:background="@color/white_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last_month_txt" />
+
+                <TextView
+                    android:id="@+id/this_year_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="This Year"
+                    android:textColor="@color/white_500"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/time"
+                    app:layout_constraintTop_toBottomOf="@id/view5" />
+
+                <CheckBox
+                    android:id="@+id/checkbox6"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:button="@drawable/checkbox_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/this_year_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/this_year_txt"
+                    app:layout_constraintTop_toTopOf="@id/this_year_txt" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginEnd="19dp"
+                    android:background="@color/white_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/this_year_txt" />
+
+                <TextView
+                    android:id="@+id/last_year_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="13dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Last Year"
+                    android:textColor="@color/white_500"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/time"
+                    app:layout_constraintTop_toBottomOf="@id/view6" />
+
+                <CheckBox
+                    android:id="@+id/last_year_checkbox"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:button="@drawable/checkbox_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/last_year_txt"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/last_year_txt"
+                    app:layout_constraintTop_toTopOf="@id/last_year_txt" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="46dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Status"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondlayout" />
+
+            <TextView
+                android:id="@+id/cancel_order_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Cancelled Orders"
+                android:textColor="@color/white_500"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/status"
+                app:layout_constraintTop_toBottomOf="@id/status" />
+
+            <CheckBox
+                android:id="@+id/checkbox10"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:button="@drawable/checkbox_selector"
+                app:layout_constraintBottom_toBottomOf="@id/cancel_order_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cancel_order_txt"
+                app:layout_constraintTop_toTopOf="@id/cancel_order_txt" />
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="19dp"
+                android:background="@color/white_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cancel_order_txt" />
+
+
+            <TextView
+                android:id="@+id/missed_order_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Missed Orders"
+                android:textColor="@color/white_500"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/status"
+                app:layout_constraintTop_toBottomOf="@id/view11" />
+
+            <CheckBox
+                android:id="@+id/missed_order_checkbox"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:button="@drawable/checkbox_selector"
+                app:layout_constraintBottom_toBottomOf="@id/missed_order_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/missed_order_txt"
+                app:layout_constraintTop_toTopOf="@id/missed_order_txt" />
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="19dp"
+                android:background="@color/white_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/missed_order_txt" />
+
+            <TextView
+                android:id="@+id/delivered_order_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Delivered Orders"
+                android:textColor="@color/white_500"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/status"
+                app:layout_constraintTop_toBottomOf="@id/view10" />
+
+            <CheckBox
+                android:id="@+id/delivered_order_checkbox"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:button="@drawable/checkbox_selector"
+                app:layout_constraintBottom_toBottomOf="@id/delivered_order_txt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/delivered_order_txt"
+                app:layout_constraintTop_toTopOf="@id/delivered_order_txt" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/delivered_order_txt">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background"
+                    android:backgroundTint="@color/white_200"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:text="@string/reset"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:text="@string/apply"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

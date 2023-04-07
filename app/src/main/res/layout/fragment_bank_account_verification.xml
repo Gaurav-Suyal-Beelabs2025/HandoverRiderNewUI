@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.BankAccountVerificationFragment">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/deposit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout_arrwback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/img_arrowback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowback"
+                android:paddingVertical="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                <ImageView
+                    android:id="@+id/img_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_support"
+                    android:layout_marginEnd="@dimen/_40sdp"
+                    app:layout_constraintTop_toTopOf="@id/img_arrowback"
+                    app:layout_constraintBottom_toBottomOf="@id/img_arrowback"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Help"
+                    android:textSize="12sp"
+                    android:textColor="#0F6FB5"
+                    android:textAllCaps="false"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    app:layout_constraintTop_toTopOf="@id/img_support"
+                    app:layout_constraintBottom_toBottomOf="@id/img_support"
+                    app:layout_constraintStart_toEndOf="@id/img_support"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/bank_account_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_11sdp"
+                android:fontFamily="@font/inter_semibold"
+                 android:textColor="@color/black"
+                android:text="Bank Account Verification"
+                android:textSize="26sp"
+                app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/constraintLayout_arrwback" />
+
+            <TextView
+                android:id="@+id/order_info_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/in_order_to_transfer_your_payout_we_need_to_nverify_your_account_number"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/bank_account_txt"
+                app:layout_constraintTop_toBottomOf="@id/bank_account_txt" />
+
+            <TextView
+                android:id="@+id/txt_bankaccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bank Account"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:fontFamily="@font/inter_reg"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/order_info_txt"
+                app:layout_constraintTop_toBottomOf="@id/order_info_txt"/>
+
+
+            <EditText
+                android:id="@+id/account_number"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start|center"
+                android:hint="@string/enter_bank_account"
+                android:inputType="number"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white_500"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/account_number"
+                app:layout_constraintTop_toBottomOf="@+id/txt_bankaccount" />
+
+            <TextView
+                android:id="@+id/txt_IFSC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IFSC code"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:fontFamily="@font/inter_reg"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@id/account_number"
+                app:layout_constraintStart_toStartOf="@id/account_number"/>
+
+
+            <EditText
+                android:id="@+id/ifsc_code"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/inter_semibold"
+                android:hint="@string/enter_ifsc_code"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white_500"
+                android:textSize="14sp"
+                android:gravity="start|center"
+                app:layout_constraintEnd_toEndOf="@+id/account_number"
+                app:layout_constraintStart_toStartOf="@+id/account_number"
+                app:layout_constraintTop_toBottomOf="@+id/txt_IFSC" />
+
+
+            <TextView
+                android:id="@+id/txt_accounttype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account Type"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:fontFamily="@font/inter_reg"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@id/ifsc_code"
+                app:layout_constraintStart_toStartOf="@id/ifsc_code"/>
+
+            <EditText
+                android:id="@+id/account_type"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:background="#F8F8F8"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="start|center"
+                android:hint="@string/account_type"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white_500"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/ifsc_code"
+                app:layout_constraintStart_toStartOf="@+id/ifsc_code"
+                app:layout_constraintTop_toBottomOf="@+id/txt_accounttype" />
+
+            <TextView
+                android:id="@+id/txt_branch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Branch "
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:fontFamily="@font/inter_reg"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@id/account_type"
+                app:layout_constraintStart_toStartOf="@id/account_type"/>
+
+
+
+            <EditText
+                android:id="@+id/branch_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:background="@drawable/edit_text_background"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="center|start"
+                android:hint="@string/branch"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white_500"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/account_type"
+                app:layout_constraintStart_toStartOf="@+id/account_type"
+                app:layout_constraintTop_toBottomOf="@+id/txt_branch" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/deposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/rs_1_will_be_deposited_to_your_account"
+        android:textColor="@color/blue_600"
+        android:textSize="14sp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        app:layout_constraintBottom_toTopOf="@+id/submit_btn"
+        app:layout_constraintStart_toStartOf="@+id/submit_btn"  />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/button_background"
+        android:padding="15dp"
+        android:text="@string/submit"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

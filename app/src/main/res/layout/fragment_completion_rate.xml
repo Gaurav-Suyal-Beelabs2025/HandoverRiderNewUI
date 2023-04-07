@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.CompletionRateFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratings_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingVertical="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/arrowback"
+            android:layout_marginStart="@dimen/_15sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"  />
+
+        <TextView
+            android:id="@+id/rating_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/completion_rate"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/back_btn"
+            app:layout_constraintStart_toEndOf="@+id/back_btn"
+            app:layout_constraintTop_toBottomOf="@id/back_btn"
+            app:layout_constraintTop_toTopOf="@id/back_btn" />
+
+        <ImageView
+            android:id="@+id/support"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_support"
+            android:layout_marginEnd="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@id/rating_txt"
+            app:layout_constraintEnd_toStartOf="@+id/help_txt"
+            app:layout_constraintTop_toTopOf="@id/rating_txt" />
+
+        <TextView
+            android:id="@+id/help_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/help"
+            android:textColor="@color/blue_600"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/support"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/support" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white_350"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratings_layout" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratings_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/select_language_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:background="@drawable/border"
+                android:paddingVertical="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/select_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/select_language"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/custom_selector"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/learn_more"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center|start"
+                    android:padding="@dimen/_12sdp"
+                    android:singleLine="true"
+                    android:text="@string/custom"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:drawableEndCompat="@drawable/ic_drop_down"
+                    app:layout_constraintEnd_toStartOf="@+id/calendar_image"
+                    app:layout_constraintStart_toStartOf="@id/select_language"
+                    app:layout_constraintTop_toBottomOf="@id/select_language" />
+
+                <ImageView
+                    android:id="@+id/calendar_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/button_background"
+                    android:padding="@dimen/_12sdp"
+                    android:src="@drawable/ic_calender_custom"
+                    app:layout_constraintBottom_toBottomOf="@id/custom_selector"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/custom_selector" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="06 Feb - 19 Feb"
+                    android:textSize="14sp"
+                    android:textColor="@color/white_500"
+                    app:layout_constraintStart_toStartOf="@id/select_language"
+                    app:layout_constraintTop_toBottomOf="@id/custom_selector" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/white_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/date" />
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="@string/ratings"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@id/select_language"
+                    app:layout_constraintTop_toBottomOf="@id/view" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/rating"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view"
+                    app:layout_constraintTop_toTopOf="@id/rating" />
+
+                <TextView
+                    android:id="@+id/check_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Sorry no data found Please\nchange the dates to check\npast performance"
+                    android:textSize="14sp"
+                    android:textColor="@color/white_500"
+                    app:layout_constraintStart_toStartOf="@id/rating"
+                    app:layout_constraintTop_toBottomOf="@id/rating" />
+
+                <ImageView
+                    android:layout_width="78dp"
+                    android:layout_height="78dp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/img_vlc"
+                    app:layout_constraintBottom_toBottomOf="@id/check_data"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rating"
+                    app:layout_constraintTop_toTopOf="@id/check_data" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/border"
+                android:paddingVertical="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/select_language_layout"
+                app:layout_constraintStart_toStartOf="@+id/select_language_layout"
+                app:layout_constraintTop_toBottomOf="@id/select_language_layout">
+
+                <ImageView
+                    android:id="@+id/ic_star_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:background="@drawable/ic_percentage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"  />
+
+                <TextView
+                    android:id="@+id/improve_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="How to Improve Ratings?"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/ic_star_image"
+                    app:layout_constraintTop_toBottomOf="@id/ic_star_image"  />
+
+                <TextView
+                    android:id="@+id/maintain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Be polite and maintain good behaviour."
+                    android:textSize="14sp"
+                    android:textColor="@color/white_500"
+                    app:layout_constraintStart_toStartOf="@id/improve_rating"
+                    app:layout_constraintTop_toBottomOf="@id/improve_rating" />
+
+                <TextView
+                    android:id="@+id/clean_helmet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Provide clean helmet and sanitizer."
+                    android:textSize="14sp"
+                    android:textColor="@color/white_500"
+                    app:layout_constraintStart_toStartOf="@id/improve_rating"
+                    app:layout_constraintTop_toBottomOf="@id/maintain"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/follow_traffic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Follow traffic rules and drive properly."
+                    android:textSize="14sp"
+                    android:textColor="@color/white_500"
+                    app:layout_constraintStart_toStartOf="@id/improve_rating"
+                    app:layout_constraintTop_toBottomOf="@id/clean_helmet"  />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/share"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_22sdp"
+                    android:background="@drawable/learn_more"
+                    android:fontFamily="@font/inter_bold"
+                    android:paddingVertical="@dimen/_12sdp"
+                    android:text="@string/learn_more"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/follow_traffic" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

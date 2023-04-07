@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragments.PersonalVerificationFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/submit_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/_8sdp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout_arrwback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_9sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/img_arrowback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrowback"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                <ImageView
+                    android:id="@+id/img_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_support"
+                    android:layout_marginEnd="@dimen/_40sdp"
+                    app:layout_constraintTop_toTopOf="@id/img_arrowback"
+                    app:layout_constraintBottom_toBottomOf="@id/img_arrowback"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Help"
+                    android:textSize="12sp"
+                    android:textColor="#0F6FB5"
+                    android:textAllCaps="false"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    app:layout_constraintTop_toTopOf="@id/img_support"
+                    app:layout_constraintBottom_toBottomOf="@id/img_support"
+                    app:layout_constraintStart_toEndOf="@id/img_support"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <TextView
+                android:id="@+id/personal_details_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="Personal Verification"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout_arrwback"/>
+
+            <TextView
+                android:id="@+id/enter_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Name"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:fontFamily="@font/inter_reg"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:layout_constraintTop_toBottomOf="@id/personal_details_txt"
+                app:layout_constraintStart_toStartOf="@id/personal_details_txt"/>
+
+
+
+            <EditText
+                android:id="@+id/first_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="center|start"
+                android:backgroundTint="@color/white_300"
+                android:hint="First name as per DL"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/white_500"
+                android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:paddingHorizontal="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="@id/first_name"
+                app:layout_constraintTop_toBottomOf="@+id/enter_name_txt" />
+
+
+            <TextView
+                android:id="@+id/enter_middle_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_reg"
+                android:text="Enter Middle Name"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:layout_marginTop="@dimen/_9sdp"
+                app:layout_constraintStart_toStartOf="@+id/first_name"
+                app:layout_constraintTop_toBottomOf="@id/first_name" />
+
+
+
+                <EditText
+                    android:id="@+id/middle_name"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:background="@drawable/edit_text_background"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center|start"
+                    android:hint="Middle name"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/white_500"
+                    android:textSize="14sp"
+                    android:imeOptions="actionNext"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/first_name"
+                    app:layout_constraintStart_toStartOf="@+id/first_name"
+                    app:layout_constraintTop_toBottomOf="@id/enter_middle_name_txt" />
+
+
+            <TextView
+                android:id="@+id/enter_last_name_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_reg"
+                android:text="Enter Middle Name"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:layout_marginTop="@dimen/_9sdp"
+                app:layout_constraintTop_toBottomOf="@id/middle_name"
+                app:layout_constraintStart_toStartOf="@id/middle_name"/>
+
+
+                <EditText
+                    android:id="@+id/last_name"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:background="@drawable/edit_text_background"
+                    android:fontFamily="@font/inter_semibold"
+                    android:hint="Last name"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/white_500"
+                    android:textSize="14sp"
+                    android:imeOptions="actionNext"
+                    android:paddingHorizontal="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/middle_name"
+                    app:layout_constraintStart_toStartOf="@+id/middle_name"
+                    app:layout_constraintTop_toBottomOf="@id/enter_last_name_txt" />
+
+
+            <TextView
+                android:id="@+id/enter_your_lc_numb_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_reg"
+                android:text="Enter Middle Name"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:layout_marginTop="@dimen/_9sdp"
+                app:layout_constraintStart_toStartOf="@id/last_name"
+                app:layout_constraintTop_toBottomOf="@id/last_name"/>
+
+
+                <EditText
+                    android:id="@+id/date_of_birth"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableEnd="@drawable/ic_calender"
+                    android:fontFamily="@font/inter_semibold"
+                    android:hint="DOB(DD/MM/YYYY)"
+                    android:padding="10dp"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="20dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:imeOptions="actionDone"
+                    android:textColorHint="@color/white_500"
+                    app:layout_constraintEnd_toEndOf="@+id/last_name"
+                    app:layout_constraintStart_toStartOf="@+id/last_name"
+                    app:layout_constraintTop_toBottomOf="@id/enter_your_lc_numb_txt" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/gender"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/date_of_birth"
+                app:layout_constraintTop_toBottomOf="@id/date_of_birth" />
+
+            <LinearLayout
+                android:id="@+id/linnerlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="9dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/gender">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="59dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:backgroundTint="#FA713F"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Male"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="59dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:backgroundTint="#F1F1F1"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Female"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="59dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:backgroundTint="#F1F1F1"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Other"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/button_background"
+        android:text="@string/submit"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
